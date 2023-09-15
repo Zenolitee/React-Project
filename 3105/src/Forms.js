@@ -1,6 +1,8 @@
 // src/Forms.js
 import React from 'react';
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const Forms = () => {
     return (
@@ -22,22 +24,25 @@ const Forms = () => {
                     <input type="text" name="lastName" placeholder="Enter your last name" />
                     </label>
                 </div>
-                <br/><br/>
+                
+                <div>
                     <label>
                     Address:
                     <input type="text" name="address" placeholder="Enter your address" />
-                </label>
-                <br/><br/>
-                <label>
+                    </label>
+                </div>
+                <div>
+                    <label>
                     Email:
                     <input type="email" name="email" placeholder="Enter your email" />
-                </label>
-                <br/><br/>
+                    </label>
+                </div>
+                <div>
                 <label>
                     Password:
                     <input type="password" name="password" placeholder="Enter your password" />
                 </label>
-                <br/><br/>
+                </div>
                 <label>
                     Phone Number:
                     <input type="tel" name="phone" placeholder="Enter your phone number" />
