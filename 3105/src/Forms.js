@@ -1,68 +1,95 @@
 // src/Forms.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './Forms.css';
+
 
 const Forms = () => {
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000); //2 segundos nigrito
+    }
+
     return (
-        <div>
-        <center>
-            <h1>Forms Page</h1>
-            <Link to="/"><button>Go to Home Page</button></Link>
-            <br/><br/>
-            <form>
-                <div>
+        <div className="container">
+            <div className="text-center">
+                <h1>Forms Page</h1>
+                <Link to="/"><button className="btn btn-primary">Go to Home Page</button></Link>
+                <br/><br/>
+                <form onSubmit={handleSubmit}>
+                    {loading ? (
+                        <div className="skeleton-loader">
+                            {Array.from({length: 8}, (_, index) => <div key={index} className="skeleton-line"></div>)}
+                        </div>
+                    ) : (
+                        <>
+                <div className="col-md-2 mb-3">
                     <label>
                     First Name:
-                    <input type="text" name="firstName" placeholder="Enter your first name" />
+                    <input type="text" className="form-control"name="firstName" placeholder="Enter your first name" style = {{textAlign: "center"}}/>
                     </label>
                 </div>
-                <div>
+                <div className="col-md-2 mb-3">
                     <label>
                     Last Name:
-                    <input type="text" name="lastName" placeholder="Enter your last name" />
+                    <input type="text" className="form-control" name="lastName" placeholder="Enter your last name" style = {{textAlign: "center"}}/>
                     </label>
                 </div>
                 
-                <div>
+                <div className="col-md-2 mb-3">
                     <label>
                     Address:
-                    <input type="text" name="address" placeholder="Enter your address" />
-                    </label>
+                    <input type="text" className="form-control" name="address" placeholder="Enter your address" style = {{textAlign: "center"}}/>
+                    </label>    
                 </div>
-                <div>
+                <div className="col-md-2 mb-3">
                     <label>
                     Email:
-                    <input type="email" name="email" placeholder="Enter your email" />
+                    <input type="email" className="form-control" name="email" placeholder="Enter your email" style = {{textAlign: "center"}}/>
                     </label>
                 </div>
-                <div>
-                <label>
+                <div className="col-md-2 mb-3">
+                    <label>
                     Password:
-                    <input type="password" name="password" placeholder="Enter your password" />
-                </label>
+                    <input type="password" className="form-control" name="password" placeholder="Enter your password" style = {{textAlign: "center"}}/>
+                    </label>
                 </div>
-                <label>
+                <div className="col-md-2 mb-3">
+                    <label>
                     Phone Number:
-                    <input type="tel" name="phone" placeholder="Enter your phone number" />
-                </label>
-                <br/><br/>
-                <label>
+                    <input type="tel" className="form-control" name="phone" placeholder="Enter your phone number" style = {{textAlign: "center"}}/>
+                    </label>
+                </div>
+                <div className="col-md-2 mb-3">
+                    <label>
                     Country:
-                    <input type="text" name="country" placeholder="Enter your country" />
-                </label>
-                <br/><br/>
-                <label>
+                    <input type="text" className="form-control" name="country" placeholder="Enter your country" style = {{textAlign: "center"}}/>
+                    </label>
+                </div>
+                <div className="col-md-2 mb-3">
+                    <label>
                     City:
-                    <input type="text" name="city" placeholder="Enter your city" />
-                </label>
-                <br/><br/>
-                <input type="submit" value="Submit" />
-            </form>
-        </center>
-    </div>
+                    <input type="text" className="form-control" name="city" placeholder="Enter your city" style = {{textAlign: "center"}}/>
+                    </label>
+                    
+                </div>
+                <div className="text-center mt-3">
+                                <button type="submit" className="btn btn-success btn-lg" value="Submit">Submit</button>
+                            </div>
+                        </>
+                    )}
+                </form>
+            </div>
+        </div>
     );
-  }
+}
 
 export default Forms;
