@@ -9,6 +9,12 @@ import Bleeding_Jane from '../image/drinks/Bleeding_Jane.png';
 import BloomLight from '../image/drinks/BloomLight.png';
 import BlueFairy from '../image/drinks/BlueFairy.png';
 import CreviceSpike from '../image/drinks/CreviceSpike.png';
+import FlamingMoai from '../image/drinks/FlamingMoai.png';
+import CobaltVelvet from '../image/drinks/Cobalt_Velvet.png';
+import FringeWeaver from '../image/drinks/Fringe_Weaver.png';
+import FluffyDream from '../image/drinks/Fluffy_Dream.png';
+import GrizzlyTemple from '../image/drinks/GrizzlyTemple.png';
+import GutPunch from '../image/drinks/GutPunch.png';
 
 const drinksData = [
   {
@@ -40,12 +46,43 @@ const drinksData = [
     name: "Crevice Spike",
     description: "It's a Sour, Manly and Sobering drink costing $140.",
     image: CreviceSpike
+  },
+  {
+    name: "Flaming Moai",
+    description: "It's a secret drink that is necessary to bring secret characters to the bar. The recipe is not shown in CALICOMP, and no-one ever asks directly for it.",
+    image: FlamingMoai
+  },
+  {
+    name: "Cobalt Velvet",
+    description: "It's a Bubbly, Classy and Burning drink costing $280.",
+    image: CobaltVelvet
+  },
+  {
+    name: "Fluffy Dream",
+    description: "It's a Sour, Girly and Soft drink costing $170.",
+    image: FluffyDream
+  },
+  {
+    name: "Fringe Weaver",
+    description: "It's a Bubbly, Classy and Strong drink costing $260.",
+    image: FringeWeaver
+  },
+  {
+    name: "Grizzly Temple",
+    description: "It's a Bitter, Promo and Bland drink costing $220.",
+    image: GrizzlyTemple
+  },
+  {
+    name: "Gut Punch",
+    description: "It's a Bitter, Promo and Bland drink costing $220.",
+    image: GutPunch
   }
 ];
 
 const DrinkCard = ({ name, description, image }) => (
-  <div className="col-md-4 mb-4">
-    <div className="card custom-card h-60 w-50">
+
+  <div className="col-sm-2 mb-4">
+    <div className="card custom-card h-100 w-10">
       <img src={image} alt={name} className="card-img-top" />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
@@ -53,6 +90,7 @@ const DrinkCard = ({ name, description, image }) => (
       </div>
     </div>
   </div>
+  
 );
 
 const Drinktionary = () => {
