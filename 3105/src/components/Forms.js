@@ -1,9 +1,10 @@
 // src/Forms.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './Forms.css';
+import '../css/Forms.css';
+import 'react-bootstrap';
+import Navbar from './Nav';
 
 
 const Forms = () => {
@@ -19,10 +20,14 @@ const Forms = () => {
     }
 
     return (
-        <div className="container">
+        
+        <div className="container-fluid p-0">
+            <Navbar />
             <div className="text-center">
-                <h1>Forms Page</h1>
-                <Link to="/"><button className="btn btn-primary">Go to Home Page</button></Link>
+                <h1 className="pt-4">Forms Page</h1>
+
+                
+                
                 <br/><br/>
                 <form onSubmit={handleSubmit}>
                     {loading ? (
@@ -31,7 +36,10 @@ const Forms = () => {
                         </div>
                     ) : (
                         <>
-                <div className="col-md-2 mb-3">
+                        <div className="text-center mt-3">
+                                <button type="submit" className="btn btn-success btn-lg" value="Submit">Submit</button>
+                            </div>
+                <div className="col-md-2 mb-2">
                     <label>
                     First Name:
                     <input type="text" className="form-control"name="firstName" placeholder="Enter your first name" style = {{textAlign: "center"}}/>
@@ -81,9 +89,7 @@ const Forms = () => {
                     </label>
                     
                 </div>
-                <div className="text-center mt-3">
-                                <button type="submit" className="btn btn-success btn-lg" value="Submit">Submit</button>
-                            </div>
+                
                         </>
                     )}
                 </form>

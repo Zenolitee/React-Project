@@ -2,16 +2,20 @@
     display: flex;
     justify-content: center;
     flex-direction: column; 
+    padding-top: 65px;
+
 }
 
 .skeleton-line {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
-    border-radius: 4px;
+    border-radius: 40px;
     margin: 19px;
     height: 40px;
     width: 200px;
+   
+    
 }
 
 @keyframes loading {
@@ -24,5 +28,7 @@
 }
 
 .form-control {
-    margin-bottom: 10; 
+    margin-bottom: 10px; 
   }
+
+  body {background-color: grey;}
