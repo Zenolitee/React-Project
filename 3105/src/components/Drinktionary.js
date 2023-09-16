@@ -49,7 +49,7 @@ const drinksData = [
   },
   {
     name: "Flaming Moai",
-    description: "It's a secret drink that is necessary to bring secret characters to the bar. The recipe is not shown in CALICOMP, and no-one ever asks directly for it.",
+    description: "It's a secret drink that is necessary to bring secret characters to the bar.",
     image: FlamingMoai
   },
   {
@@ -82,7 +82,7 @@ const drinksData = [
 const DrinkCard = ({ name, description, image }) => (
 
   <div className="col-sm-2 mb-4">
-    <div className="card custom-card h-100 w-10">
+    <div className="card custom-card h-90 w-10">
       <img src={image} alt={name} className="card-img-top" />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
