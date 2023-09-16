@@ -6,7 +6,7 @@
     import 'react-bootstrap';
     import Navbar from './Nav';
     import logotitle from '../image/logotitle.png';
-    import top from '../image/topppp.gif';
+
 
     const Home = () => {
     

@@ -1,10 +1,32 @@
 .background-image   {
     background: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url('../image/home.gif');
     background-size: cover;
-    height: 100vh;
-    width: 100%;
+  
 }
 .Drinktionary{
- color: #da14ff;
- text-shadow: 0 0 9px #da14ff;
+ color: #47d4d4;
+ text-shadow: 0 0 9px #47d4d4   ;
 }
+
+.custom-card{
+    background-color: #080d19;
+    width: 100%;    
+}
+.custom-card:hover {
+    box-shadow: 0 0 10px 6px #da14ff;
+  }
+.square{
+    padding-top: 10px;
+}
+
+.card-title{
+    color: #da14ff;
+}
+.card-text{
+    color: #47d4d4;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
