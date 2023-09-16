@@ -6,14 +6,17 @@ import '../css/Drinktionary.css';
 import 'react-bootstrap';
 import Navbar from './Nav';
 
+
 const Drinktionary = () => {
     return (
-      <div>
+      <div className="background-image">
+        <div className="container-fluid p-0">
         <Navbar />
         <center>
-        <h1 className= "text-white pt-2">Drinktionary</h1>
+        <h1 className= "Drinktionary pt-2">Drinktionary</h1>
         </center>
       </div>
+    </div>
     );
   }
 

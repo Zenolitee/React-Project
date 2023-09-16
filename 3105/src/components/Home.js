@@ -1,35 +1,41 @@
-// src/Home.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../css/Home.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'react-bootstrap';
-import Navbar from './Nav';
-const Home = () => {
-  
+    // src/Home.js
+    import React from 'react';
+    import '../css/Home.css';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+    import 'react-bootstrap';
+    import Navbar from './Nav';
+    import logotitle from '../image/logotitle.png';
+    import top from '../image/topppp.gif';
 
-    return (    
-    <div>
-        
-        <Navbar />
+    const Home = () => {
+    
 
-        
-          <center>
-            <h1>Home Page</h1>
+        return (    
+            <div className="background-image">
+        <div className="container-fluid p-0">
             
-            <Link to="/about"><button class="btn btn-primary">Go to About Page</button></Link>
-            <br/><br/>
-            <Link to="/nav"><button class="btn btn-primary">Go to Nav Page</button></Link>
-            <br/><br/>
-            <Link to="/forms"><button class="btn btn-primary">Go to Forms Fill up Page</button></Link>
-            </center>
+            
+            <Navbar />
+            {/*<div className="text-center">
+                <img src={top} alt="" className="w-100 h-100"/>
+        </div>*/}
 
-        </div>
+            
+            
+            <div className="text-center">
+                <img src={logotitle} alt="" className="pt-4"/>
+                </div>
+                </div>
+                
+
+
+                </div>
+           
 
 
 
-    );
-}
+        );
+    }
 
-export default Home;
+    export default Home;
