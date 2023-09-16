@@ -13,11 +13,12 @@
 .custom-card{
     background-color: #080d19;
     width: 100%;  
-  
+    transition: transform 0.3s;
 
 }
 .custom-card:hover {
     box-shadow: 0 0 10px 6px #da14ff;
+    transform: scale(1.05)
   }
 .square{
     padding-top: 10px;

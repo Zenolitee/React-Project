@@ -3,3 +3,20 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+  .navbar-brand{
+    color: #da14ff;
+    text-shadow: 0 5px 9px #da14ff;
+    transition: transform 0.3s;
+  }
+  .navbar-brand.hover{
+    color: #da14ff;
+    text-shadow: 0 5px 9px #da14ff;
+    transform: scale(1.05)
+  }
+
+  .nav-link{
+    color: #47d4d4;
+    text-shadow: 0 5px 10px  #47d4d4;
+    
+  }
+ 

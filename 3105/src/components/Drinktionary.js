@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/Drinktionary.css';
+import '../css/Shimmer.css';
 import Navbar from './Nav';
 import Bad_Touch from '../image/drinks/Bad_Touch.png';
 import Beer from '../image/drinks/Beer.png';
@@ -15,6 +16,7 @@ import FringeWeaver from '../image/drinks/Fringe_Weaver.png';
 import FluffyDream from '../image/drinks/Fluffy_Dream.png';
 import GrizzlyTemple from '../image/drinks/GrizzlyTemple.png';
 import GutPunch from '../image/drinks/GutPunch.png';
+
 
 const drinksData = [
   {
@@ -79,29 +81,61 @@ const drinksData = [
   }
 ];
 
-const DrinkCard = ({ name, description, image }) => (
-
-  <div className="col-sm-2 mb-4">
-    <div className="card custom-card h-90 w-10">
-      <img src={image} alt={name} className="card-img-top" />
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text">{description}</p>
+const SkeletonCard = () => {
+  return (
+    <div className="col-sm-2 mb-4">
+      <div className="card custom-card h-90 w-10 position-relative shimmer-effect">
+        <div className="skeleton-img"></div>
+        <div className="card-body">
+          <div className="skeleton-line"></div>
+          <div className="skeleton-line"></div>
+          <div className="skeleton-line"></div>
+        </div>
       </div>
     </div>
-  </div>
-  
-);
+  );
+};
+
+const DrinkCard = ({ name, description, image }) => {
+  const [showShimmer, setShowShimmer] = useState(true);
+
+  useEffect(() => {
+    const shimmerTimeout = setTimeout(() => {
+      setShowShimmer(false);
+    }, 2000);
+
+    return () => clearTimeout(shimmerTimeout);
+  }, []);
+
+  if (showShimmer) {
+    return <SkeletonCard />;
+  }
+
+  return (
+    <div className="col-sm-2 mb-4">
+      <div className="card custom-card h-90 w-10 position-relative">
+        <img src={image} alt={name} className="card-img-top" />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Drinktionary = () => {
   return (
+    
     <div className="background-image">
       <div className="container-fluid p-0">
         <Navbar />
         <center>
           <h1 className="Drinktionary pt-2">Drinktionary</h1>
           <div className="row">
+            
             {drinksData.map((drink, index) => (
+              
               <DrinkCard 
                 key={index}
                 name={drink.name}
