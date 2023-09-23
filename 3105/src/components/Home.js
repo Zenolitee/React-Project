@@ -23,9 +23,9 @@
 
             
             
-            <div className="text-center">
-                <img src={logotitle} alt="" className="pt-4"/>
-                </div>
+                <center>
+                <img src={logotitle} alt="" class="flex pt-4 items-center"/></center>
+             
                 </div>
                 
 

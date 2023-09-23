@@ -20,11 +20,11 @@ const Forms = () => {
     }
 
     return (
-        
+        <div className="background-image">
         <div className="container-fluid p-0">
             <Navbar />
             <div className="text-center">
-                <h1 className="pt-4">Forms Page</h1>
+                <h1 className="Forms-page pt-4">Forms Page</h1>
 
                 
                 
@@ -94,6 +94,7 @@ const Forms = () => {
                     )}
                 </form>
             </div>
+        </div>
         </div>
     );
 }

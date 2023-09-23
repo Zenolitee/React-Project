@@ -143,12 +143,16 @@ const Drinktionary = () => {
                 image={drink.image}
 
               />
+
             ))}
           </div>
         </center>
+       
       </div>
     </div>
   );
 }
+
+ 
 
 export default Drinktionary;

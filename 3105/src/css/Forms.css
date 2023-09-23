@@ -12,8 +12,8 @@
     animation: loading 1.5s infinite;
     border-radius: 40px;
     margin: 19px;
-    height: 40px;
-    width: 200px;
+    height: 90px;
+    width:  10px;
    
     
 }
@@ -30,3 +30,13 @@
 .form-control {
     margin-bottom: 10px; 
   }
+
+  .background-image   {
+    background: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30)), url('../image/home.gif');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.Forms-page{
+    color: #47d4d4;
+}
